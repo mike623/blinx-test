@@ -25,3 +25,4 @@ backend support adonis. please head on `/app` for detail
 ### TODO
 1. build webapp using docker
 2. higher test coverage
+3. better handle on route system
