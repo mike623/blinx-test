@@ -1,0 +1,65 @@
+@layout('layout')
+@section('content')
+  <center>
+    <div class="relative mx-6 my-2 mt-10">
+      <input id="textInput" type="search" class="w-full bg-purple-white shadow rounded border-0 p-3" placeholder="Search by name...">
+    </div>
+  </center>
+
+  <center id="results">
+    
+  </center>
+
+  <script id="item-card" type="text/x-handlebars-template">
+    <div class="shadow-lg w-3/6 m-8">
+      <div class="flex">
+        <div class="flex-none w-48 relative">
+          <img src="\{\{image\}\}" alt="" class="absolute inset-0 w-full h-full object-cover" />
+        </div>
+        <form class="flex-auto p-6">
+          <div class="flex flex-wrap">
+            <h1 class="flex-auto text-xl font-semibold">
+              \{\{name\}\}
+            </h1>
+            <div class="text-xl font-semibold text-gray-500">
+              $\{\{price\}\}
+            </div>
+          </div>
+          <div class="flex items-baseline mt-4 mb-6"></div>
+          <div class="flex space-x-3 mb-4 text-sm font-medium">
+            <div class="flex-auto flex space-x-3">
+              <button class="w-1/2 flex items-center justify-center rounded-md bg-black text-white" type="submit">Buy now</button>
+              <button class="w-1/2 flex items-center justify-center rounded-md border border-gray-300" type="button">Add to bag</button>
+            </div>
+            <button class="flex-none flex items-center justify-center w-9 h-9 rounded-md text-gray-400 border border-gray-300" type="button" aria-label="like">
+              <svg width="20" height="20" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
+              </svg>
+            </button>
+          </div>
+          <p class="text-sm text-gray-500">
+            Free shipping on all continental US orders.
+          </p>
+        </form>
+      </div>
+    </div>
+  </script>
+
+  <script id="starter" type="text/x-handlebars-template">
+    <div class="max-w-screen-lg text-center py-12 mt-4">
+      <h2 class="text-lg font-bold tracking-tight text-gray-800 sm:leading-10">
+        Search something
+      </h2>
+    </div>
+  </script>
+  
+  <script id="empty" type="text/x-handlebars-template">
+    <div class="max-w-screen-lg text-center py-12 mt-4">
+      <h2 class="text-lg font-bold tracking-tight text-gray-800 sm:leading-10">
+        No result
+      </h2>
+    </div>
+  </script>
+
+  {{ script('/app') }}
+@endsection

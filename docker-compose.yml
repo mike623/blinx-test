@@ -1,0 +1,9 @@
+version: "3.9" # optional since v1.27.0
+services:
+  pg-db:
+    environment: 
+        # TODO: setup valid auth
+        POSTGRES_HOST_AUTH_METHOD: trust
+    image: postgres
+    ports:
+      - "5432:5432"
